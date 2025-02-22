@@ -1,101 +1,158 @@
+"use client"; 
 import Image from "next/image";
+import Link from "next/link"; 
 
-export default function Home() {
+const banners = [
+  { id: 1, image: "/images/banner1.jpg" },
+  { id: 2, image: "/images/banner1.jpg" },
+  { id: 3, image: "/images/banner1.jpg" },
+];
+
+const products = [
+  {
+    id: 1,
+    name: "Nutrabay Gold 100% Whey Protein Concentrate",
+    price: "₹1,229",
+    originalPrice: "₹1,849",
+    image: "/images/protein1.jpg",
+    discount: "37% OFF",
+  },
+  {
+    id: 2,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein2.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 3,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein3.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 4,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein4.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 5,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein5.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 6,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein6.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 7,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein7.jpg",
+    discount: "34% OFF",
+  },
+  {
+    id: 8,
+    name: "Nutrabay Pure Whey Protein Isolate",
+    price: "₹1,595",
+    originalPrice: "₹2,399",
+    image: "/images/protein8.jpg",
+    discount: "34% OFF",
+  },
+];
+
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main>
+      {/* HERO_SECTION */}
+      <section className="flex items-center justify-center bg-white min-h-[50vh] px-4 sm:px-6 lg:px-16 mt-1 p-5">
+        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-8 border rounded-3xl">
+          <div className="md:w-2/5 text-center md:text-left max-w-lg px-5">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#333333] leading-tight">
+              Fuel Your Body, Build Your Strength
+            </h1>
+            <p className="text-sm sm:text-base italic mt-4 text-[#444444]">
+              Powerful protein powders and supplements to help you achieve peak performance and muscle growth.
+            </p>
+            <div className="mt-6 py-5">
+              <Link href="/products">
+                <button className="bg-yellow-600 text-white px-6 py-3 rounded-xl hover:bg-yellow-800 transition font-bold">
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="md:w-3/5 flex items-center justify-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/protein2.jpg"
+              alt="Protein Powder"
+              width={500} 
+              height={500} 
+              className="w-full max-w-md md:max-w-2xl h-[600px] object-cover rounded-2xl"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Bestseller Product Section */}
+      <section className="w-full py-10 px-6">
+        <h2 className="text-3xl font-bold mb-4">Best Product</h2>
+        
+        <div className="flex overflow-x-auto space-x-6 scrollbar-hide ">
+          {products.map((product) => (
+            <div key={product.id} className="w-60 bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+              <div className="bg-yellow-700 text-white text-xs font-bold px-2 py-1 rounded-md inline-block mb-2">
+                Upto {product.discount}
+              </div>
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={200} 
+                height={150} 
+                className="w-full h-32 object-contain mb-4"
+              />
+              <h3 className="text-sm font-semibold">{product.name}</h3>
+              <p className="text-md font-bold text-gray-900">
+                {product.price} <span className="text-gray-500 line-through text-sm">{product.originalPrice}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Banner Section */}
+      <section className="w-full py-8 px-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+          {banners.map((banner) => (
+            <div key={banner.id} className="w-full h-64  overflow-hidden py-5">
+              <Image
+                src={banner.image}
+                alt="Banner"
+                width={500}
+                height={300} 
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </main>
   );
-}
+};
+
+export default Home;
